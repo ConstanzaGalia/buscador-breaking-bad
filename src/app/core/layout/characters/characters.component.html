@@ -1,0 +1,22 @@
+<h4 class="m-5">Personajes de Breaking Bad</h4>
+<div class="row d-flex text-align-center justify-content-center">
+  <div class="col-4">
+      <input type="text" class="form-control mt-4 border-5 border-success" placeholder="Search for a character" 
+      [(ngModel)]="searchName" (ngModelChange)="searchCharacter()"
+      >
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-4 mt-4" *ngFor="let char of filteredChars">
+      <div class="card" style="width: 18rem">
+        <img src="{{char.img}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{char.name}}</h5>
+          <p class="card-text">{{char.birthday}}</p>
+          <a routerLink="/characters/{{char.char_id}}"class="btn btn-success">ver más</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
